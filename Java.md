@@ -12,6 +12,7 @@
 8. [静态方法为什么不能调用非静态成员？](#aaa)
 9. [静态方法和实例方法有什么区别？](#aaaa)
 10. [重载和重写有什么区别？](#chongzai)
+11. [Java数据类型？包装类型？包装类型缓存池？基本类型和包装类型区别？](#shujvleixing)
 
 
 
@@ -113,9 +114,59 @@
 
 综上：**重写就是子类对父类方法的重新改造，外部样子不能改变，内部逻辑可以改变。**
 
+### <span id="shujvleixing">Java数据类型</span>
 
+**基本类型**
 
+- byte/8
+- char/16、short/16
+- int/32、float/32
+- long/64、double/64
+- boolean
 
+boolean 只有两个值：true、false，可以使用 1 bit 来存储，但是具体大小没有明确规定。JVM 会在编译时期将 boolean 类型的数据转换为 int，使用 1 来表示 true，0 表示 false。JVM 支持 boolean 数组，但是是通过读写 byte 数组来实现的。
 
+**包装类型**
 
+基本类型都有对应的包装类型，基本类型与其对应的包装类型之间的赋值使用自动装箱与拆箱完成。
+
+```java
+Integer x = 2;     // 装箱 调用了 Integer.valueOf(2)
+int y = x;         // 拆箱 调用了 X.intValue()
+```
+
+**缓存池**
+
+new Integer(123) 与 Integer.valueOf(123) 的区别在于：
+
+- new Integer(123) 每次都会新建一个对象；
+- Integer.valueOf(123) 会使用缓存池中的对象，多次调用会取得同一个对象的引用。
+
+```java
+Integer x = new Integer(123);
+Integer y = new Integer(123);
+System.out.println(x == y);    // false
+Integer z = Integer.valueOf(123);
+Integer k = Integer.valueOf(123);
+System.out.println(z == k);   // true
+```
+
+- valueOf() 方法的实现比较简单，就是先判断值是否在缓存池中，如果在的话就直接返回缓存池的内容。
+- 编译器会在自动装箱过程调用 valueOf() 方法，因此多个值相同且值在缓存池范围内的 Integer 实例使用自动装箱来创建，那么就会引用相同的对象。
+- 拆箱：`int n = i` 等价于 `int n = i.intValue()`;
+- 基本类型对应的缓冲池如下：
+  - boolean values true and false
+  - all byte values
+  - short values between -128 and 127
+  - int values between -128 and 127
+  - char in the range \u0000 to \u007F
+
+Java 基本数据类型的包装类型的大部分都用到了缓存机制来提升性能。在使用这些基本类型对应的包装类型时，如果该数值范围在缓冲池范围内，就可以直接使用缓冲池中的对象。
+
+**区别**
+
+- 成员变量包装类型不赋值就是 `null` ，而基本类型有默认值且不是 `null`。
+- 包装类型可用于泛型，而基本类型不可以。
+- 基本数据类型的局部变量存放在 Java 虚拟机栈中的局部变量表中，基本数据类型的成员变量（未被 `static` 修饰 ）存放在 Java 虚拟机的堆中。包装类型属于对象类型，我们知道几乎所有对象实例都存在于堆中。
+- 相比于对象类型， 基本数据类型占用的空间非常小
 
