@@ -1,4 +1,3 @@
-<!-- vscode-markdown-toc -->
 	* 1. [什么是 Spring Boot？](#SpringBoot)
 	* 2. [为什么要用SpringBoot](#SpringBoot-1)
 	* 3. [SpringBoot与SpringCloud 区别](#SpringBootSpringCloud)
@@ -39,12 +38,6 @@
 	* 38. [ Spring Boot 中如何实现定时任务 ?](#SpringBoot-1)
 	* 39. [ spring-boot-starter-parent 有什么用 ?](#spring-boot-starter-parent)
 	* 40. [ SpringBoot如何实现打包](#SpringBoot-1)
-
-<!-- vscode-markdown-toc-config
-	numbering=true
-	autoSave=true
-	/vscode-markdown-toc-config -->
-<!-- /vscode-markdown-toc -->
 
 ###  1. <a name='SpringBoot'></a>什么是 Spring Boot？
 
