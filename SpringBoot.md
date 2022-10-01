@@ -1,16 +1,16 @@
-什么是 Spring Boot？
+### 什么是 Spring Boot？
 
 Spring Boot 是 Spring 开源组织下的子项目，是 Spring 组件一站式解决方案，主要是简化了使用 Spring 的难度，简省了繁重的配置，提供了各种启动器，使开发者能快速上手。
 
-为什么要用SpringBoot
+### 为什么要用SpringBoot
 
 快速开发，快速整合，配置简化、内嵌服务容器
 
-SpringBoot与SpringCloud 区别
+### SpringBoot与SpringCloud 区别
 
 SpringBoot是快速开发的Spring框架，SpringCloud是完整的微服务框架，SpringCloud依赖于SpringBoot。
 
-Spring Boot 有哪些优点？
+### Spring Boot 有哪些优点？
 
 Spring Boot 主要有如下优点：
 
@@ -19,22 +19,14 @@ Spring Boot 主要有如下优点：
 提供了一系列大型项目通用的非业务性功能，例如：内嵌服务器、安全管理、运行数据监控、运行状况检查和外部化配置等。
 SpringBoot总结就是使编码变简单、配置变简单、部署变简单、监控变简单等等
 
-
-
-Spring Boot 的核心注解是哪个？它主要由哪几个注解组成的？
-
+### Spring Boot 的核心注解是哪个？它主要由哪几个注解组成的？
 
 启动类上面的注解是@SpringBootApplication，它也是 Spring Boot 的核心注解，主要组合包含了以下 3 个注解：
 
-
-@SpringBootConfiguration：组合了 @Configuration 注解，实现配置文件的功能。
-
-
-@EnableAutoConfiguration：打开自动配置的功能，也可以关闭某个自动配置的选项，
-例如：java 如关闭数据源自动配置功能： @SpringBootApplication(exclude = { DataSourceAutoConfiguration.class })。
-
-
-@ComponentScan：Spring组件扫描。
++ @SpringBootConfiguration：组合了 @Configuration 注解，实现配置文件的功能。
++ @EnableAutoConfiguration：打开自动配置的功能，也可以关闭某个自动配置的选项，
+  例如：java 如关闭数据源自动配置功能： @SpringBootApplication(exclude = { DataSourceAutoConfiguration.class })。
++ @ComponentScan：Spring组件扫描。
 
 
 
