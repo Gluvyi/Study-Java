@@ -1,4 +1,4 @@
-# Java学习记录
+# Java 🐱‍👤
 ---
 ### Java并发
 [JUC原理学习笔记](https://github.com/Gluvyi/Study-Java/blob/main/Java多线程.md)
