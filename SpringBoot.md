@@ -31,34 +31,30 @@ SpringBoot总结就是使编码变简单、配置变简单、部署变简单、�
 
 
 
-Spring Boot 支持哪些日志框架？推荐和默认的日志框架是哪个？
+### Spring Boot 支持哪些日志框架？推荐和默认的日志框架是哪个？
 
 Spring Boot 支持 Java Util Logging, Log4j2, Lockback 作为日志框架，如果你使用 Starters 启动器，Spring Boot 将使用 Logback 作为默认日志框架，但是不管是那种日志框架他都支持将配置文件输出到控制台或者文件中。
 
-SpringBoot Starter的工作原理
-
-
+### SpringBoot Starter的工作原理
 我个人理解SpringBoot就是由各种Starter组合起来的，我们自己也可以开发Starter
-
-
 在sprinBoot启动时由@SpringBootApplication注解会自动去maven中读取每个starter中的spring.factories文件,该文件里配置了所有需要被创建spring容器中的bean，并且进行自动配置把bean注入SpringContext中 //（SpringContext是Spring的配置文件）
 
 
-Spring Boot 2.X 有什么新特性？与 1.X 有什么区别？
+### Spring Boot 2.X 有什么新特性？与 1.X 有什么区别？
 
-配置变更
-JDK 版本升级
-第三方类库升级
-响应式 Spring 编程支持
-HTTP/2 支持
-配置属性绑定
-更多改进与加强
++ 配置变更
++ JDK 版本升级
++ 第三方类库升级
++ 响应式 Spring 编程支持
++ HTTP/2 支持
++ 配置属性绑定
++ 更多改进与加强
 
-SpringBoot支持什么前端模板，
+### SpringBoot支持什么前端模板?
 
 thymeleaf，freemarker，jsp，官方不推荐JSP会有限制
 
-SpringBoot的缺点
+### SpringBoot的缺点
 
 我觉得是为难人，SpringBoot在目前我觉得没有什么缺点，非要找一个出来我觉得就是
 
@@ -66,59 +62,59 @@ SpringBoot的缺点
 
 
 
-运行 Spring Boot 有哪几种方式？
+### 运行 Spring Boot 有哪几种方式？
 
 
-打包用命令或者放到容器中运行
++ 打包用命令或者放到容器中运行
 
 
-用 Maven/ Gradle 插件运行
++ 用 Maven/ Gradle 插件运行
 
 
-直接执行 main 方法运行
++ 直接执行 main 方法运行
 
 
-Spring Boot 需要独立的容器运行吗？
+### Spring Boot 需要独立的容器运行吗？
 
 可以不需要，内置了 Tomcat/ Jetty 等容器。
 
-开启 Spring Boot 特性有哪几种方式？
+### 开启 Spring Boot 特性有哪几种方式？
 
 
-继承spring-boot-starter-parent项目
++ 继承spring-boot-starter-parent项目
 
 
-导入spring-boot-dependencies项目依赖
++ 导入spring-boot-dependencies项目依赖
 
 
-SpringBoot 实现热部署有哪几种方式？
+### SpringBoot 实现热部署有哪几种方式？
 
 热部署就是可以不用重新运行SpringBoot项目可以实现操作后台代码自动更新到以运行的项目中
 主要有两种方式：
 
-Spring Loaded
-Spring-boot-devtools
++ Spring Loaded
++ Spring-boot-devtools
 
 
 
-SpringBoot事物的使用
+### SpringBoot事物的使用
 
 SpringBoot的事物很简单，首先使用注解EnableTransactionManagement开启事物之后，然后在Service方法上添加注解Transactional便可。
 
-Async异步调用方法
+### Async异步调用方法
 
 在SpringBoot中使用异步调用是很简单的，只需要在方法上使用@Async注解即可实现方法的异步调用。
 注意：需要在启动类加入@EnableAsync使异步调用@Async注解生效。
 
-如何在 Spring Boot 启动的时候运行一些特定的代码？
+### 如何在 Spring Boot 启动的时候运行一些特定的代码？
 
 可以实现接口 ApplicationRunner 或者 CommandLineRunner，这两个接口实现方式一样，它们都只提供了一个 run 方法
 
-Spring Boot 有哪几种读取配置的方式？
+### Spring Boot 有哪几种读取配置的方式？
 
 Spring Boot 可以通过 @PropertySource,@Value,@Environment, @ConfigurationPropertie注解来绑定变量
 
-什么是 JavaConfig？
+### 什么是 JavaConfig？
 
 
 Spring JavaConfig 是 Spring 社区的产品，Spring 3.0引入了他，它提供了配置 Spring IOC 容器的纯Java 方法。因此它有助于避免使用 XML 配置。使用 JavaConfig 的优点在于：
@@ -145,7 +141,7 @@ Spring JavaConfig 是 Spring 社区的产品，Spring 3.0引入了他，它提�
 
 
 
-SpringBoot的自动配置原理是什么
+### SpringBoot的自动配置原理是什么
 
 
 主要是Spring Boot的启动类上的核心注解SpringBootApplication注解主配置类，有了这个主配置类启动时就会为SpringBoot开启一个@EnableAutoConfiguration注解自动配置功能。
@@ -159,7 +155,7 @@ SpringBoot的自动配置原理是什么
 
 
 
-你如何理解 Spring Boot 配置加载顺序？
+### 你如何理解 Spring Boot 配置加载顺序？
 
 
 在 Spring Boot 里面，可以使用以下几种方式来加载配置。
@@ -182,11 +178,11 @@ SpringBoot的自动配置原理是什么
 
 
 
-什么是 YAML？
+### 什么是 YAML？
 
 YAML 是一种人类可读的数据序列化语言。它通常用于配置文件。与属性文件相比，如果我们想要在配置文件中添加复杂的属性，YAML 文件就更加结构化，而且更少混淆。可以看出 YAML 具有分层配置数据。
 
-YAML 配置的优势在哪里 ?
+### YAML 配置的优势在哪里 ?
 
 
 YAML 现在可以算是非常流行的一种配置文件格式了，无论是前端还是后端，都可以见到 YAML 配置。那么 YAML 配置和传统的 properties 配置相比到底有哪些优势呢？
@@ -203,7 +199,7 @@ YAML 现在可以算是非常流行的一种配置文件格式了，无论是前
 
 
 
-Spring Boot 是否可以使用 XML 配置 ?
+### Spring Boot 是否可以使用 XML 配置 ?
 
 Spring Boot 推荐使用 Java 配置而非 XML 配置，但是 Spring Boot 中也可以使用 XML 配置，通过 @ImportResource 注解可以引入一个 XML 配置。
 
@@ -220,7 +216,7 @@ application (. yml 或者 . properties)： 由ApplicatonContext 加载，用于 
 
 
 
-什么是 Spring Profiles？
+### 什么是 Spring Profiles？
 
 在项目的开发中，有些配置文件在开发、测试或者生产等不同环境中可能是不同的，例如数据库连接、redis的配置等等。那我们如何在不同环境中自动实现配置的切换呢？Spring给我们提供了profiles机制给我们提供的就是来回切换配置文件的功能
 Spring Profiles 允许用户根据配置文件（dev，test，prod 等）来注册 bean。因此，当应用程序在开发中运行时，只有某些 bean 可以加载，而在 PRODUCTION中，某些其他 bean 可以加载。假设我们的要求是 Swagger 文档仅适用于 QA 环境，并且禁用所有其他文档。这可以使用配置文件来完成。Spring Boot 使得使用配置文件非常简单。
@@ -238,7 +234,7 @@ SpringBoot多数据源事务如何管理
 第二种是使用jta-atomikos实现分布式事务管理
 
 
-保护 Spring Boot 应用有哪些方法？
+### 保护 Spring Boot 应用有哪些方法？
 
 在生产中使用HTTPS
 使用Snyk检查你的依赖关系
@@ -246,11 +242,11 @@ SpringBoot多数据源事务如何管理
 启用CSRF保护
 使用内容安全策略防止XSS攻击
 
-如何实现 Spring Boot 应用程序的安全性？
+### 如何实现 Spring Boot 应用程序的安全性？
 
 为了实现 Spring Boot 的安全性，我们使用 spring-boot-starter-security 依赖项，并且必须添加安全配置。它只需要很少的代码。配置类将必须扩展WebSecurityConfigurerAdapter 并覆盖其方法。
 
-比较一下 Spring Security 和 Shiro 各自的优缺点 ?
+### 比较一下 Spring Security 和 Shiro 各自的优缺点 ?
 
 
 由于 Spring Boot 官方提供了大量的非常方便的开箱即用的 Starter ，包括 Spring Security 的 Starter ，使得在 Spring Boot 中使用 Spring Security 变得更加容易，甚至只需要添加一个依赖就可以保护所有的接口，所以，如果是 Spring Boot 项目，一般选择 Spring Security 。当然这只是一个建议的组合，单纯从技术上来说，无论怎么组合，都是没有问题的。Shiro 和 Spring Security 相比，主要有如下一些特点：
@@ -267,7 +263,7 @@ Spring Security 功能强大；Shiro 功能简单
 
 
 
-Spring Boot 中如何解决跨域问题 ?
+### Spring Boot 中如何解决跨域问题 ?
 
 跨域可以在前端通过 JSONP 来解决，但是 JSONP 只可以发送 GET 请求，无法发送其他类型的请求，在 RESTful 风格的应用中，就显得非常鸡肋，因此我们推荐在后端通过 （CORS，Cross-origin resource sharing） 来解决跨域问题。这种解决方案并非 Spring Boot 特有的，在传统的 SSM 框架中，就可以通过 CORS 来解决跨域问题，只不过之前我们是在 XML 文件中配置 CORS ，现在可以通过实现WebMvcConfigurer接口然后重写addCorsMappings方法解决跨域问题。
 
@@ -284,19 +280,19 @@ Spring Boot 中如何解决跨域问题 ?
       }
 
   }
-复制代码Spring Boot 中的监视器是什么？
+### 复制代码Spring Boot 中的监视器是什么？
 
 Spring boot actuator 是 spring 启动框架中的重要功能之一。Spring boot 监视器可帮助您访问生产环境中正在运行的应用程序的当前状态。有几个指标必须在生产环境中进行检查和监控。即使一些外部应用程序可能正在使用这些服务来向相关人员触发警报消息。监视器模块公开了一组可直接作为 HTTP URL 访问的REST 端点来检查状态。
 
-如何使用 Spring Boot 实现全局异常处理？
+### 如何使用 Spring Boot 实现全局异常处理？
 
 Spring 提供了一种使用 ControllerAdvice 处理异常的非常有用的方法。 我们通过实现一个 ControlerAdvice 类，来处理控制器类抛出的所有异常。
 
-我们如何监视所有 Spring Boot 微服务？
+### 我们如何监视所有 Spring Boot 微服务？
 
 Spring Boot 提供监视器端点以监控各个微服务的度量。这些端点对于获取有关应用程序的信息（如它们是否已启动）以及它们的组件（如数据库等）是否正常运行很有帮助。但是，使用监视器的一个主要缺点或困难是，我们必须单独打开应用程序的知识点以了解其状态或健康状况。想象一下涉及 50 个应用程序的微服务，管理员将不得不击中所有 50 个应用程序的执行终端。为了帮助我们处理这种情况，我们将使用位于的开源项目。 它建立在 Spring Boot Actuator 之上，它提供了一个 Web UI，使我们能够可视化多个应用程序的度量。
 
-SpringBoot性能如何优化
+###  SpringBoot性能如何优化
 
 
 如果项目比较大，类比较多，不使用@SpringBootApplication，采用@Compoment指定扫包范围
@@ -308,7 +304,7 @@ SpringBoot性能如何优化
 将springboot内置服务器由tomcat设置为undertow
 
 
-如何重新加载 Spring Boot 上的更改，而无需重新启动服务器？Spring Boot项目如何热部署？
+### 如何重新加载 Spring Boot 上的更改，而无需重新启动服务器？Spring Boot项目如何热部署？
 
 这可以使用 DEV 工具来实现。通过这种依赖关系，您可以节省任何更改，嵌入式tomcat 将重新启动。Spring Boot 有一个开发工具（DevTools）模块，它有助于提高开发人员的生产力。Java 开发人员面临的一个主要挑战是将文件更改自动部署到服务器并自动重启服务器。开发人员可以重新加载 Spring Boot 上的更改，而无需重新启动服务器。这将消除每次手动部署更改的需要。Spring Boot 在发布它的第一个版本时没有这个功能。这是开发人员最需要的功能。DevTools 模块完全满足开发人员的需求。该模块将在生产环境中被禁用。它还提供 H2 数据库控制台以更好地测试应用程序。
 
@@ -316,11 +312,11 @@ SpringBoot性能如何优化
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-devtools</artifactId>
 </dependency>
-复制代码SpringBoot微服务中如何实现 session 共享 ?
+### 复制代码SpringBoot微服务中如何实现 session 共享 ?
 
 在微服务中，一个完整的项目被拆分成多个不相同的独立的服务，各个服务独立部署在不同的服务器上，各自的 session 被从物理空间上隔离开了，但是经常，我们需要在不同微服务之间共享 session ，常见的方案就是 Spring Session + Redis 来实现 session 共享。将所有微服务的 session 统一保存在 Redis 上，当各个微服务对 session 有相关的读写操作时，都去操作 Redis 上的 session 。这样就实现了 session 共享，Spring Session 基于 Spring 中的代理过滤器实现，使得 session 的同步操作对开发人员而言是透明的，非常简便。
 
-您使用了哪些 starter maven 依赖项？
+### 您使用了哪些 starter maven 依赖项？
 
 使用了下面的一些依赖项
 
@@ -333,11 +329,11 @@ mybatis-spring-boot-starter 第三方的mybatis集成starter
 
 
 
-Spring Boot 中的 starter 到底是什么 ?
+###  Spring Boot 中的 starter 到底是什么 ?
 
 首先，这个 Starter 并非什么新的技术点，基本上还是基于 Spring 已有功能来实现的。首先它提供了一个自动化配置类，一般命名为 XXXAutoConfiguration ，在这个配置类中通过条件注解来决定一个配置是否生效（条件注解就是 Spring 中原本就有的），然后它还会提供一系列的默认配置，也允许开发者根据实际情况自定义相关配置，然后通过类型安全的属性(spring.factories)注入将这些配置属性注入进来，新注入的属性会代替掉默认属性。正因为如此，很多第三方框架，我们只需要引入依赖就可以直接使用了。当然，开发者也可以自定义 Starter
 
-Spring Boot 中如何实现定时任务 ?
+###  Spring Boot 中如何实现定时任务 ?
 
 
 在 Spring Boot 中使用定时任务主要有两种不同的方式，一个就是使用 Spring 中的 @Scheduled 注解，另一-个则是使用第三方框架 Quartz。
@@ -346,7 +342,7 @@ Spring Boot 中如何实现定时任务 ?
 使用 Spring 中的 @Scheduled 的方式主要通过 @Scheduled 注解来实现。
 
 
-spring-boot-starter-parent 有什么用 ?
+###  spring-boot-starter-parent 有什么用 ?
 
 
 我们都知道，新创建一个 Spring Boot 项目，默认都是有 parent 的，这个 parent 就是 spring-boot-starter-parent ，spring-boot-starter-parent 主要有如下作用：
@@ -364,7 +360,7 @@ spring-boot-starter-parent 有什么用 ?
 总结就是打包用的
 
 
-SpringBoot如何实现打包
+###  SpringBoot如何实现打包
 
 进入项目目录在控制台输入mvn clean package，clean是清空已存在的项目包，package进行打包
 或者点击左边选项栏中的Mavne，先点击clean在点击package
