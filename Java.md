@@ -12,7 +12,28 @@
 8. [静态方法为什么不能调用非静态成员？](#aaa)
 9. [静态方法和实例方法有什么区别？](#aaaa)
 10. [重载和重写有什么区别？](#chongzai)
-11. [Java数据类型？包装类型？包装类型缓存池？基本类型和包装类型区别？](#shujvleixing)
+11. [Java数据类型？包装类型？包装类型缓存机制？基本类型和包装类型区别？](#shujvleixing)
+12. [面向对象和面向过程有什么区别？](#面向对象和面向过程区别)
+13. [对象实体和对象引用有什么区别?](#面向对象引用)
+14. [类的构造方法？能否重写？](#构造方法)
+15. [面向对象三大特征](#三大特征)
+16. [深拷贝和浅拷贝区别了解吗？什么是引用拷贝？](#拷贝)
+17. [Object 类的常见方法有哪些？](#z)
+18. [String、StringBuffer、StringBuilder 的区别？](#zz)
+19. [Exception 和 Error 有什么区别？](#zzz)
+20. [Throwable 类常用方法有哪些？](#zzzzz)
+21. [Checked Exception 和 Unchecked Exception 有什么区别？](#zzzz)
+22. [try-catch-finally 如何使用？](#zzzzzz)
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -152,8 +173,6 @@ System.out.println(z == k);   // true
 ```
 
 - valueOf() 方法的实现比较简单，就是先判断值是否在缓存池中，如果在的话就直接返回缓存池的内容。
-- 编译器会在自动装箱过程调用 valueOf() 方法，因此多个值相同且值在缓存池范围内的 Integer 实例使用自动装箱来创建，那么就会引用相同的对象。
-- 拆箱：`int n = i` 等价于 `int n = i.intValue()`;
 - 基本类型对应的缓冲池如下：
   - boolean values true and false
   - all byte values
@@ -161,12 +180,198 @@ System.out.println(z == k);   // true
   - int values between -128 and 127
   - char in the range \u0000 to \u007F
 
-Java 基本数据类型的包装类型的大部分都用到了缓存机制来提升性能。在使用这些基本类型对应的包装类型时，如果该数值范围在缓冲池范围内，就可以直接使用缓冲池中的对象。
+**装箱拆箱**
 
-**区别**
+- 编译器会在自动装箱过程调用 valueOf() 方法，因此多个值相同且值在缓存池范围内的 Integer 实例使用自动装箱来创建，那么就会引用相同的对象。
+- 装箱其实就是调用了 包装类的`valueOf()`方法，拆箱其实就是调用了 `xxxValue()`方法。
+- 拆箱：`int n = i` 等价于 `int n = i.intValue()`;
+- **如果频繁拆装箱的话，也会严重影响系统的性能。我们应该尽量避免不必要的拆装箱操作。**
+
+**基本类类型成员类型区别**
 
 - 成员变量包装类型不赋值就是 `null` ，而基本类型有默认值且不是 `null`。
 - 包装类型可用于泛型，而基本类型不可以。
 - 基本数据类型的局部变量存放在 Java 虚拟机栈中的局部变量表中，基本数据类型的成员变量（未被 `static` 修饰 ）存放在 Java 虚拟机的堆中。包装类型属于对象类型，我们知道几乎所有对象实例都存在于堆中。
 - 相比于对象类型， 基本数据类型占用的空间非常小
 
+### <span id="面向对象和面向过程区别">面向对象和面向过程的区别</span>
+
+两者的主要区别在于解决问题的方式不同：
+
+- 面向过程把解决问题的过程拆成一个个方法，通过一个个方法的执行解决问题。
+- 面向对象会先抽象出对象，然后用对象执行方法的方式解决问题。
+
+另外，面向对象开发的程序一般更易维护、易复用、易扩展。
+
+### <span id="面向对象引用">对象实体和对象引用有什么区别</span>
+
+new 创建对象实例（对象实例在堆内存中），对象引用指向对象实例（对象引用存放在栈内存中）。
+
+一个对象引用可以指向 0 个或 1 个对象（一根绳子可以不系气球，也可以系一个气球）;一个对象可以有 n 个引用指向它（可以用 n 条绳子系住一个气球）。
+
+### <span id="构造方法">类的构造方法？能否重写？<span>
+
+构造方法是一种特殊的方法，主要作用是完成对象的初始化工作。
+
+如果一个类没有声明构造方法，也可以执行！因为一个类即使没有声明构造方法也会有默认的不带参数的构造方法。如果我们自己添加了类的构造方法（无论是否有参），Java 就不会再添加默认的无参数的构造方法了，我们一直在不知不觉地使用构造方法，这也是为什么我们在创建对象的时候后面要加一个括号（因为要调用无参的构造方法）。
+
+构造方法特点如下：
+
+- 名字与类名相同。
+- 没有返回值，但不能用 void 声明构造函数。
+- 生成类的对象时自动执行，无需调用。
+
+构造方法不能被 override（重写）,但是可以 overload（重载）,所以你可以看到一个类中有多个构造函数的情况。
+
+### <span id="三大特征">面向对象三大特征</span>
+
+#### 封装
+
+封装是指把一个对象的状态信息（也就是属性）隐藏在对象内部，不允许外部对象直接访问对象的内部信息。但是可以提供一些可以被外界访问的方法来操作属性。
+
+#### 继承
+
+继承是使用已存在的类的定义作为基础建立新类的技术，新类的定义可以增加新的数据或新的功能，也可以用父类的功能，但不能选择性地继承父类。通过使用继承，可以快速地创建新的类，可以提高代码的重用，程序的可维护性，节省大量创建新类的时间 ，提高开发效率。
+
+**关于继承如下 3 点请记住：**
+
+1. 子类拥有父类对象所有的属性和方法（包括私有属性和私有方法），但是父类中的私有属性和方法子类是无法访问，**只是拥有**。
+2. 子类可以拥有自己属性和方法，即子类可以对父类进行扩展。
+3. 子类可以用自己的方式实现父类的方法。
+
+#### 多态
+
+多态，顾名思义，表示一个对象具有多种的状态，具体表现为父类的引用指向子类的实例。
+
+**多态的特点:**
+
+- 对象类型和引用类型之间具有继承（类）/实现（接口）的关系；
+- 引用类型变量发出的方法调用的到底是哪个类中的方法，必须在程序运行期间才能确定；
+- 多态不能调用“只在子类存在但在父类不存在”的方法；
+- 如果子类重写了父类的方法，真正执行的是子类覆盖的方法，如果子类没有覆盖父类的方法，执行的是父类的方法。
+
+### <span id="拷贝">深拷贝和浅拷贝区别了解吗？什么是引用拷贝？</span>
+
+- **浅拷贝**：浅拷贝会在堆上创建一个新的对象（区别于引用拷贝的一点），不过，如果原对象内部的属性是引用类型的话，浅拷贝会直接复制内部对象的引用地址，也就是说拷贝对象和原对象共用同一个内部对象。
+- **深拷贝** ：深拷贝会完全复制整个对象，包括这个对象所包含的内部对象。
+- **引用拷贝：** 简单来说，引用拷贝就是两个不同的引用指向同一个对象。
+
+### <span id="z">Object 类的常见方法有哪些？</span>
+
+Object 类是一个特殊的类，是所有类的父类。它主要提供了以下 11 个方法：
+
+```java
+/**
+ * native 方法，用于返回当前运行时对象的 Class 对象，使用了 final 关键字修饰，故不允许子类重写。
+ */
+public final native Class<?> getClass()
+/**
+ * native 方法，用于返回对象的哈希码，主要使用在哈希表中，比如 JDK 中的HashMap。
+ */
+public native int hashCode()
+/**
+ * 用于比较 2 个对象的内存地址是否相等，String 类对该方法进行了重写以用于比较字符串的值是否相等。
+ */
+public boolean equals(Object obj)
+/**
+ * naitive 方法，用于创建并返回当前对象的一份拷贝。
+ */
+protected native Object clone() throws CloneNotSupportedException
+/**
+ * 返回类的名字实例的哈希码的 16 进制的字符串。建议 Object 所有的子类都重写这个方法。
+ */
+public String toString()
+/**
+ * native 方法，并且不能重写。唤醒一个在此对象监视器上等待的线程(监视器相当于就是锁的概念)。如果有多个线程在等待只会任意唤醒一个。
+ */
+public final native void notify()
+/**
+ * native 方法，并且不能重写。跟 notify 一样，唯一的区别就是会唤醒在此对象监视器上等待的所有线程，而不是一个线程。
+ */
+public final native void notifyAll()
+/**
+ * native方法，并且不能重写。暂停线程的执行。注意：sleep 方法没有释放锁，而 wait 方法释放了锁 ，timeout 是等待时间。
+ */
+public final native void wait(long timeout) throws InterruptedException
+/**
+ * 多了 nanos 参数，这个参数表示额外时间（以毫微秒为单位，范围是 0-999999）。 所以超时的时间还需要加上 nanos 毫秒。。
+ */
+public final void wait(long timeout, int nanos) throws InterruptedException
+/**
+ * 跟之前的2个wait方法一样，只不过该方法一直等待，没有超时时间这个概念
+ */
+public final void wait() throws InterruptedException
+/**
+ * 实例被垃圾回收器回收的时候触发的操作
+ */
+protected void finalize() throws Throwable { }
+```
+
+### <span id='zz'>String、StringBuffer、StringBuilder 的区别？</span>
+
+**可变性**
+
+`String` 是不可变的（后面会详细分析原因）。
+
+`StringBuilder` 与 `StringBuffer` 都继承自 `AbstractStringBuilder` 类，在 `AbstractStringBuilder` 中也是使用字符数组保存字符串，不过没有使用 `final` 和 `private` 关键字修饰，最关键的是这个 `AbstractStringBuilder` 类还提供了很多修改字符串的方法比如 `append` 方法。
+
+**线程安全性**
+
+`String` 中的对象是不可变的，也就可以理解为常量，线程安全。`AbstractStringBuilder` 是 `StringBuilder` 与 `StringBuffer` 的公共父类，定义了一些字符串的基本操作，如 `expandCapacity`、`append`、`insert`、`indexOf` 等公共方法。`StringBuffer` 对方法加了同步锁或者对调用的方法加了同步锁，所以是线程安全的。`StringBuilder` 并没有对方法进行加同步锁，所以是非线程安全的。
+
+**性能**
+
+每次对 `String` 类型进行改变的时候，都会生成一个新的 `String` 对象，然后将指针指向新的 `String` 对象。`StringBuffer` 每次都会对 `StringBuffer` 对象本身进行操作，而不是生成新的对象并改变对象引用。相同情况下使用 `StringBuilder` 相比使用 `StringBuffer` 仅能获得 10%~15% 左右的性能提升，但却要冒多线程不安全的风险。
+
+**对于三者使用的总结：**
+
+1. 操作少量的数据: 适用 `String`
+2. 单线程操作字符串缓冲区下操作大量数据: 适用 `StringBuilder`
+3. 多线程操作字符串缓冲区下操作大量数据: 适用 `StringBuffer`
+
+### <span id="zz">字符串常量池的作用了解吗？</span>
+
+**字符串常量池** 是 JVM 为了提升性能和减少内存消耗针对字符串（String 类）专门开辟的一块区域，主要目的是为了避免字符串的重复创建。
+
+### <span id="zzz">Exception 和 Error 有什么区别？</span>
+
+在 Java 中，所有的异常都有一个共同的祖先 `java.lang` 包中的 `Throwable` 类。`Throwable` 类有两个重要的子类:
+
+- **`Exception`** :程序本身可以处理的异常，可以通过 `catch` 来进行捕获。`Exception` 又可以分为 Checked Exception (受检查异常，必须处理) 和 Unchecked Exception (不受检查异常，可以不处理)。
+- **`Error`** ：`Error` 属于程序无法处理的错误 ，~~我们没办法通过 `catch` 来进行捕获~~不建议通过`catch`捕获 。例如 Java 虚拟机运行错误（`Virtual MachineError`）、虚拟机内存不够错误(`OutOfMemoryError`)、类定义错误（`NoClassDefFoundError`）等 。这些异常发生时，Java 虚拟机（JVM）一般会选择线程终止。
+
+### <span id="zzzzz">Throwable 类常用方法有哪些？</span>
+
+- `String getMessage()`: 返回异常发生时的简要描述
+- `String toString()`: 返回异常发生时的详细信息
+- `String getLocalizedMessage()`: 返回异常对象的本地化信息。使用 `Throwable` 的子类覆盖这个方法，可以生成本地化信息。如果子类没有覆盖该方法，则该方法返回的信息与 `getMessage()`返回的结果相同
+- `void printStackTrace()`: 在控制台上打印 `Throwable` 对象封装的异常信息
+
+### <span id="zzzz">Checked Exception 和 Unchecked Exception 有什么区别？</span>
+
+**Checked Exception** 即 受检查异常 ，Java 代码在编译过程中，如果受检查异常没有被 `catch`或者`throws` 关键字处理的话，就没办法通过编译。
+
+**Unchecked Exception** 即 **不受检查异常** ，Java 代码在编译过程中 ，我们即使不处理不受检查异常也可以正常通过编译。
+
+### <span id="zzzzzz">try-catch-finally 如何使用？</span>
+
+- `try`块 ： 用于捕获异常。其后可接零个或多个 `catch` 块，如果没有 `catch` 块，则必须跟一个 `finally` 块。
+- `catch`块 ： 用于处理 try 捕获到的异常。
+- `finally` 块 ： 无论是否捕获或处理异常，`finally` 块里的语句都会被执行。当在 `try` 块或 `catch` 块中遇到 `return` 语句时，`finally` 语句块将在方法返回之前被执行。
+
+**finally中的代码不会执行的三种情况：**
+
++  finally 之前虚拟机被终止运行
++ 程序所在的线程死亡。
++ 关闭 CPU
+
+### 什么是泛型？有什么作用？泛型的种类？
+
+**Java 泛型（Generics）**是泛型参数，可以增强代码的可读性以及稳定性。
+
+编译器可以对泛型参数进行检测，并且通过泛型参数可以指定传入的对象类型。比如 `ArrayList<Persion> persons = new ArrayList<Persion>()` 这行代码就指明了该 `ArrayList` 对象只能传入 `Persion` 对象，如果传入其他类型的对象就会报错。
+
+泛型一般有三种使用方式:**泛型类**、**泛型接口**、**泛型方法**。
+
++ 在实例化泛型类时，必须指定泛型的具体类型
++ 实例化泛型接口时可以指定具体类型也可以不指定
