@@ -137,9 +137,9 @@ thymeleaf，freemarker，jsp，官方不推荐JSP会有限制
 
 
 
-###  15. <a name='SpringBoot-1'></a>SpringBoot事物的使用
+###  15. <a name='SpringBoot-1'></a>SpringBoot事务的使用
 
-SpringBoot的事物很简单，首先使用注解EnableTransactionManagement开启事物之后，然后在Service方法上添加注解Transactional便可。
+SpringBoot的事务很简单，首先使用注解EnableTransactionManagement开启事务之后，然后在Service方法上添加注解Transactional便可。
 
 ###  16. <a name='Async'></a>Async异步调用方法
 
