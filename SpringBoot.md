@@ -12,7 +12,7 @@
 12. [Spring Boot 需要独立的容器运行吗？](#SpringBoot-1)
 13. [开启 Spring Boot 特性有哪几种方式？](#SpringBoot-1)
 14. [SpringBoot 实现热部署有哪几种方式？](#SpringBoot-1)
-15. [SpringBoot事物的使用](#SpringBoot-1)
+15. [SpringBoot事务的使用](#SpringBoot-1)
 16. [Async异步调用方法](#Async)
 17. [如何在 Spring Boot 启动的时候运行一些特定的代码？](#SpringBoot-1)
 18. [Spring Boot 有哪几种读取配置的方式？](#SpringBoot-1)
