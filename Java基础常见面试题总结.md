@@ -113,9 +113,9 @@ head:
       content: 全网质量最高的Java基础常见知识点和面试题总结，希望对你有帮助！
 ---
 
-##  1. <span name=''></span>基础概念与常识
+##  1. <span name=''>基础概念与常识</span>
 
-###  1.1. <span name='Java'></span>Java 语言有哪些特点?
+###  1.1. <span name='Java'>Java 语言有哪些特点?</span>
 
 1. 简单易学；
 2. 面向对象（封装，继承，多态）；
@@ -132,9 +132,9 @@ head:
 
 “Write Once, Run Anywhere（一次编写，随处运行）”这句宣传口号，真心经典，流传了好多年！以至于，直到今天，依然有很多人觉得跨平台是 Java 语言最大的优势。实际上，跨平台已经不是 Java 最大的卖点了，各种 JDK 新特性也不是。目前市面上虚拟化技术已经非常成熟，比如你通过 Docker 就很容易实现跨平台了。在我看来，Java 强大的生态才是！
 
-###  1.2. <span name='JVMvsJDKvsJRE'></span>JVM vs JDK vs JRE
+###  1.2. <span name='JVMvsJDKvsJRE'>JVM vs JDK vs JRE</span>
 
-####  1.2.1. <span name='JVM'></span>JVM
+####  1.2.1. <span name='JVM'>JVM</span>
 
 Java 虚拟机（JVM）是运行 Java 字节码的虚拟机。JVM 有针对不同系统的特定实现（Windows，Linux，macOS），目的是使用相同的字节码，它们都会给出相同的结果。字节码和不同系统的 JVM 实现是 Java 语言“一次编译，随处可以运行”的关键所在。
 
