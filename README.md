@@ -2,6 +2,7 @@
 ---
 ### Java并发
 [JUC原理学习笔记](https://github.com/Gluvyi/Study-Java/blob/main/Java多线程.md)
+[JUC面试](https://github.com/Gluvyi/Study-Java/blob/main/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B%E9%9D%A2%E8%AF%95.md)
 ### Java虚拟机
 [Jvm原理学习笔记](https://github.com/Gluvyi/Study-Java/blob/main/JVM.md)
 ### Java面试整理
