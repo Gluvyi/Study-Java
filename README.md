@@ -11,7 +11,8 @@
 + [Java异常](https://github.com/Gluvyi/Study-Java/blob/main/Java%E5%BC%82%E5%B8%B8%E6%9E%B6%E6%9E%84%E4%B8%8E%E5%BC%82%E5%B8%B8%E5%85%B3%E9%94%AE%E5%AD%97.md)
 ### Spring及框架
 - [Spring](https://github.com/Gluvyi/Study-Java/blob/main/spring.md)
-- [SpringBoot](https://github.com/Gluvyi/Study-Java/blob/main/SpringBoot.md)
+- [SpringBoot面试题1](https://github.com/Gluvyi/Study-Java/blob/main/SpringBoot.md)
+- [SpringBoot面试题2](https://github.com/Gluvyi/Study-Java/blob/main/spring%20boot%E9%9D%A2%E8%AF%95%E9%A2%98.md)
 - [SpringMVC](https://github.com/Gluvyi/Study-Java/blob/main/SpringMVC.md)
 ### 数据库
 - [数据库](https://github.com/Gluvyi/Study-Java/blob/main/%E6%95%B0%E6%8D%AE%E5%BA%93.md)
