@@ -1,6 +1,6 @@
 <!-- vscode-markdown-toc -->
-	* 1. [什么是 Spring Boot？](#SpringBoot)
-	* 2. [Spring Boot 有哪些优点？](#SpringBoot-1)
+	1. [什么是 Spring Boot？](#SpringBoot)
+	2. [Spring Boot 有哪些优点？](#SpringBoot-1)
 	* 3. [Spring 和 SpringBoot 有什么不同？](#SpringSpringBoot)
 	* 4. [如何重新加载 Spring Boot 上的更改，而无需重新启动服务器？](#SpringBoot-1)
 	* 5. [Spring Boot 中的监视器是什么？](#SpringBoot-1)
