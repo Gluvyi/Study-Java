@@ -1,10 +1,11 @@
 # Java 🐱‍👤
 ---
 ### Java并发
-[JUC原理学习笔记](https://github.com/Gluvyi/Study-Java/blob/main/Java多线程.md)<br>
-[JUC面试](https://github.com/Gluvyi/Study-Java/blob/main/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B%E9%9D%A2%E8%AF%95.md)
++ [JUC原理学习笔记](https://github.com/Gluvyi/Study-Java/blob/main/Java多线程.md)
++ [JUC面试](https://github.com/Gluvyi/Study-Java/blob/main/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B%E9%9D%A2%E8%AF%95.md)
 ### Java虚拟机
-[Jvm原理学习笔记](https://github.com/Gluvyi/Study-Java/blob/main/JVM.md)
++ [JVM原理学习笔记](https://github.com/Gluvyi/Study-Java/blob/main/JVM.md)
++ [JVM面试](https://github.com/Gluvyi/Study-Java/blob/main/JVM%E9%9D%A2%E8%AF%95.md)
 ### Java面试整理
 + [Java基础](https://github.com/Gluvyi/Study-Java/blob/main/Java.md)
 + [Java集合](https://github.com/Gluvyi/Study-Java/blob/main/%E9%9B%86%E5%90%88.md)
