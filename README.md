@@ -19,3 +19,5 @@
 - [数据库](https://github.com/Gluvyi/Study-Java/blob/main/%E6%95%B0%E6%8D%AE%E5%BA%93.md)
 - [Redis](https://github.com/Gluvyi/Study-Java/blob/main/redis.md)
 - [MyBatis](https://github.com/Gluvyi/Study-Java/blob/main/MyBatis.md)
+### 设计模式
++ [设计模式面试总结](https://github.com/Gluvyi/Study-Java/blob/main/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E9%9D%A2%E8%AF%95.md)
