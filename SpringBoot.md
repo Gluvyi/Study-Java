@@ -352,6 +352,7 @@ Spring Boot 提供监视器端点以监控各个微服务的度量。这些端�
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-devtools</artifactId>
 </dependency>
+
 ###  35. <a name='SpringBootsession'></a>复制代码SpringBoot微服务中如何实现 session 共享 ?
 
 在微服务中，一个完整的项目被拆分成多个不相同的独立的服务，各个服务独立部署在不同的服务器上，各自的 session 被从物理空间上隔离开了，但是经常，我们需要在不同微服务之间共享 session ，常见的方案就是 Spring Session + Redis 来实现 session 共享。将所有微服务的 session 统一保存在 Redis 上，当各个微服务对 session 有相关的读写操作时，都去操作 Redis 上的 session 。这样就实现了 session 共享，Spring Session 基于 Spring 中的代理过滤器实现，使得 session 的同步操作对开发人员而言是透明的，非常简便。
