@@ -93,7 +93,7 @@
 
 - Spring是**一个轻量级Java开发框架**，最早有**Rod Johnson**创建，目的是为了解决企业级应用开发的业务逻辑层和其他各层的耦合问题。它是一个分层的JavaSE/JavaEE full-stack（一站式）轻量级开源框架，为开发Java应用程序提供全面的基础架构支持。Spring负责基础架构，因此Java开发者可以专注于应用程序的开发。
 - Spring最根本的使命是**解决企业级应用开发的复杂性，即简化Java开发**。
-- Spring可以做很多事情，它为企业级开发提供给了丰富的功能，但是这些功能的底层都依赖于它的两个核心特性，也就是**依赖注入（dependency injection，DI）\**和\**面向切面编程（aspect-oriented programming，AOP）**。
+- Spring可以做很多事情，它为企业级开发提供给了丰富的功能，但是这些功能的底层都依赖于它的两个核心特性，也就是**依赖注入（dependency injection，DI)**和**面向切面编程（aspect-oriented programming，AOP）**。
 
 **为了降低Java开发的复杂性，Spring采取了以下4种关键策略**
 
