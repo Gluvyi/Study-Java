@@ -7,7 +7,7 @@
 + [JVM原理学习笔记](https://github.com/Gluvyi/Study-Java/blob/main/JVM%E7%AC%94%E8%AE%B0%E5%8F%8A%E9%9D%A2%E8%AF%95%E6%95%B4%E7%90%86/JVM.md)
 + [JVM面试总结](https://github.com/Gluvyi/Study-Java/blob/main/JVM%E7%AC%94%E8%AE%B0%E5%8F%8A%E9%9D%A2%E8%AF%95%E6%95%B4%E7%90%86/JVM%E9%9D%A2%E8%AF%95.md)
 ### Java面试整理
-+ [Java基础](https://github.com/Gluvyi/Study-Java/blob/main/Java.md)
++ [Java基础](https://github.com/Gluvyi/Study-Java/blob/main/Java%E5%9F%BA%E7%A1%80%E5%8F%8A%E9%9D%A2%E8%AF%95%E6%95%B4%E7%90%86/Java%E6%A6%82%E8%BF%B0.md)
 + [Java基础附加](https://github.com/Gluvyi/Study-Java/blob/main/Java%E5%9F%BA%E7%A1%80%E5%8F%8A%E9%9D%A2%E8%AF%95%E6%95%B4%E7%90%86/Java.md)
 + [Java基础面试合集](https://github.com/Gluvyi/Study-Java/blob/main/Java%E5%9F%BA%E7%A1%80%E5%8F%8A%E9%9D%A2%E8%AF%95%E6%95%B4%E7%90%86/Java%E5%9F%BA%E7%A1%80%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93.md)
 + [Java集合](https://github.com/Gluvyi/Study-Java/blob/main/Java%E5%9F%BA%E7%A1%80%E5%8F%8A%E9%9D%A2%E8%AF%95%E6%95%B4%E7%90%86/%E9%9B%86%E5%90%88.md)
